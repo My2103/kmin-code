@@ -1,17 +1,9 @@
-#Bai05.py: Nhap vao n. In ra phep tinh S(n) = 1 + 1/2 + 1/3 +...+ 1/n
+#Prompt two numbers from user
+number1 = int(input("Nhập số thứ nhất: "))
+number2 = int(input("Nhập số thứ hai: "))
 
-#Nhap vao mot so nguyen duong n
-n = int(input("Nhap vao mot so nguyen duong: "))
+#Sum two number
+sum = number1 + number2
 
-#Kiem tra tinh hop le
-while(n <= 0):
-    print("Khong hop le. Vui long nhap mot so nguyen duong")
-    n = int(input("Nhap vao mot so nguyen duong: "))
-
-s = "1" #Tao mot bien chuoi
-
-#Tao vong lap de tim ra cac so <= n
-for i in range(2, n+1):
-    s = str(s) + " + " + "1/" + str(i)
-
-print("S(" + str(n) + ")" + " = " + str(s))
+#Print the sum 
+print("Tổng của hai số: ", sum)

@@ -1,27 +1,11 @@
-#bai06.py: Hay cho biet trong mang co ton tai so am khong
+#Promt the birth year from user
+nam_sinh = int(input("Nhập năm sinh của bạn: "))
 
-#Khai bao mang rong
-a = []
-n = int(input("Nhap vao so luong phan tu: "))
+#Declare constant
+NAM_HIEN_TAI = 2024
 
-#Ham nhap mang
-def nhap_mang():  
-    for i in range(n):
-        e = int(input(f"Nhap phan tu thu {i}: "))
-        a.append(e)
-    return a
+#Compute the age of user
+tuoi = NAM_HIEN_TAI - nam_sinh
 
-#Ham tim so am
-def tim_so_am(arr):
-    find_negative = False
-    for i in arr:
-        if i < 0:
-            find_negative = True
-    return find_negative
-
-def cn_tim_so_am():
-    array = nhap_mang()
-    result = tim_so_am(array)
-    print(result)
-
-cn_tim_so_am()
+#Print the age of user
+print("Tuổi của bạn:", tuoi)
