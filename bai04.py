@@ -1,27 +1,18 @@
-#bai04.py: Cho mot mang luu cac ma so sinh vien. 
-#Cho phep nhap vao mot ma so. Hay cho biet ma so nay xuat hien o dau trong mang
+#Bai04.py: Cho phep nhap vao mot so nguyen duong n. Hay tinh tich cac uoc so cua n
 
-#Khai bao mang rong
-a = []
-n = int(input("Nhap vao so luong phan tu: "))
+#Nhap vao mot so nguyen duong n
+n = int(input("Nhap vao mot so nguyen duong: "))
 
-#Ham nhap mang
-def nhap_mang():  
-    for i in range(n):
-        e = int(input(f"Nhap phan tu thu {i}: "))
-        a.append(e)
-    return a
+#Kiem tra tinh hop le
+while(n <= 0):
+    print("Khong hop le. Vui long nhap mot so nguyen duong")
+    n = int(input("Nhap vao mot so nguyen duong: "))
 
-#Ham tim so
-def tim_so(arr):
-    number = int(input("Nhap so ban can tim: "))
+#Tao vong lap tim uoc so
+multiple = 1 #Khoi tao bien multiple de nhan cac uoc so
 
-    for i in range(len(arr)):
-        if(number == arr[i]):
-            print("So ban can tim o vi tri so", i)
+for i in range(2, n+1):
+    if(n % i == 0):
+        multiple *= i
 
-def cn_tim_so():
-    array = nhap_mang()
-    tim_so(array)
-
-cn_tim_so()
+print("Tich cua cac uoc so:", multiple)

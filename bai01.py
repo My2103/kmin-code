@@ -1,9 +1,17 @@
-#bai01.py: Khai bao mot mang co 5 phan tu, in ra phan tu dau tien
+#bai01.py: Cho nhap vao so nguyen duong n. 
+#Hay in ra man hinh n chuoi co dang nhu sau: "Kmin 1", "Kmin 2", "Kmin n"
 
-#Khai bao mang
-a = [21, 3, 55, 49, 60, 32]
+#Nhap vao mot so nguyen duong n
+n = int(input("Nhap vao mot so nguyen duong: "))
 
-n = len(a) #So luong phan tu
+#Kiem tra tinh hop le
+while(n <= 0):
+    print("Khong hop le. Vui long nhap mot so nguyen duong")
+    n = int(input("Nhap vao mot so nguyen duong: "))
 
-#In ra ket qua
-print("Phan tu cuoi cung:", a[n-1])
+#Tao vong lap, in ra chuoi
+i = 1 #Khoi tao bien i = 1
+
+while(i <= n):
+    print("Kmin " + str(i))
+    i = i + 1

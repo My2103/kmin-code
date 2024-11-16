@@ -1,27 +1,19 @@
-#bai03.py: Tim ra gia tri so am dau tien trong mang
+#bai03.py: Cho nhap vao so nguyen duong n. Hay dem xem n co bao nhieu uoc so le
 
-#Khai bao mang rong
-a = []
-n = int(input("Nhap vao so luong phan tu: "))
+#Nhap vao mot so nguyen duong n
+n = int(input("Nhap vao mot so nguyen duong: "))
 
-#Ham nhap mang
-def nhap_mang():  
-    for i in range(n):
-        e = int(input(f"Nhap phan tu thu {i}: "))
-        a.append(e)
-    return a
+#Kiem tra tinh hop le
+while(n <= 0):
+    print("Khong hop le. Vui long nhap mot so nguyen duong")
+    n = int(input("Nhap vao mot so nguyen duong: "))
 
-#Ham tim so am dau tien
-def tim_so_am(arr):
-    for i in arr:
-        if(i < 0):
-            print("So am dau tien: ", i)
-            break
-    else:
-        print("Khong co so am trong mang")
+#Chay vong lap tim uoc so
+count = 0 #Khai bao bien count dem uoc so
+for i in range(1, n+1):
+    if(n % i == 0) and (i % 2 != 0):
+        print(i)
+        count += 1
 
-def cn_tim_so_am():
-    array = nhap_mang()
-    result = tim_so_am(array)
-
-cn_tim_so_am()
+#In ra ket qua
+print(str(n) + " co " + str(count) + " uoc so le.") 

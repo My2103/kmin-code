@@ -1,58 +1,21 @@
-#bai02.py: Nhap vao mot mang so nguyen
+#bai02.py: Cho phep nhap vào mot so nguyen duong n. Hay in ra man hinh cac uoc so chan cua so nguyen n
 
-#Khai bao mang rong
-a = []
-n = int(input("Nhap vao so luong phan tu: "))
+#Nhap vao mot so nguyen duong n
+n = int(input("Nhap vao mot so nguyen duong: "))
 
-#Ham nhap mang
-def nhap_mang():  
-    for i in range(n):
-        e = int(input(f"Nhap phan tu thu {i}: "))
-        a.append(e)
-    return a
+#Kiem tra tinh hop le
+while(n <= 0):
+    print("Khong hop le. Vui long nhap mot so nguyen duong")
+    n = int(input("Nhap vao mot so nguyen duong: "))
 
-def test_nhap_mang():
-    b = nhap_mang()
-    print(b)
+#Chay vong lap for de tim uoc so cua n
+even = False
+print("Cac uoc so chan cua " + str(n) + " la: ")
+for i in range(2, n+1):
+    if (n % i == 0) and (i % 2 == 0):
+        print(i)
+        even = True
 
-#Ham liet ke so duong
-def liet_ke_so_duong(arr):
-    print("Phan tu duong la: ")
-    for e in arr:
-        if e > 0:
-            print(i)
-
-#Ham test liet ke duong
-def test_lk_duong():
-    a = nhap_mang()
-    liet_ke_so_duong(a)
-
-#Ham dem so le
-def dem_so_le(arr):
-    count = 0
-    for i in arr:
-        if(i % 2 != 0):
-            count += 1
-    return count
-
-def test_dem_so_le():
-    array = nhap_mang()
-    kq = dem_so_le(array)
-    print(f"Co {kq} so le trong mang.")
-
-#Ham tinh tong cac so am trong mang
-def cong_so_am(arr):
-    sum = 0
-    for i in arr:
-        if(i < 0):
-            sum += i
-    return sum
-
-def test_cong_so_am():
-    array = nhap_mang()
-    sum = cong_so_am(array)
-    print("Tong cac so am trong mang =", sum)
-
-
-test_cong_so_am()
-
+#In ra ket qua
+if not even:
+    print("Khong co")

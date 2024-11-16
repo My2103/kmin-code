@@ -1,29 +1,17 @@
-#bai05.py: Tim so lon nhat trong mang
+#Bai05.py: Nhap vao n. In ra phep tinh S(n) = 1 + 1/2 + 1/3 +...+ 1/n
 
-#Khai bao mang rong
-a = []
-n = int(input("Nhap vao so luong phan tu: "))
+#Nhap vao mot so nguyen duong n
+n = int(input("Nhap vao mot so nguyen duong: "))
 
-#Ham nhap mang
-def nhap_mang():  
-    for i in range(n):
-        e = int(input(f"Nhap phan tu thu {i}: "))
-        a.append(e)
-    return a
+#Kiem tra tinh hop le
+while(n <= 0):
+    print("Khong hop le. Vui long nhap mot so nguyen duong")
+    n = int(input("Nhap vao mot so nguyen duong: "))
 
-#Ham tim so lon nhat
-def tim_so_lon_nhat(arr):
-    max = arr[0]
+s = "1" #Tao mot bien chuoi
 
-    for i in range(len(arr)):
-        if(arr[i] > max):
-            max = arr[i]
+#Tao vong lap de tim ra cac so <= n
+for i in range(2, n+1):
+    s = str(s) + " + " + "1/" + str(i)
 
-    return max
-
-def cn_tim_so_lon_nhat():
-    array = nhap_mang()
-    result = tim_so_lon_nhat(array)
-    print("So lon nhat trong mang la:", result)
-
-cn_tim_so_lon_nhat()
+print("S(" + str(n) + ")" + " = " + str(s))
